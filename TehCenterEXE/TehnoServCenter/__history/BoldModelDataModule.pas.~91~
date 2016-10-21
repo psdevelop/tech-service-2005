@@ -1,0 +1,145 @@
+unit BoldModelDataModule;
+
+interface
+
+uses
+  SysUtils, Classes, BoldHandle, BoldPersistenceHandle,
+  BoldPersistenceHandleFile, BoldPersistenceHandleFileXML, BoldAbstractModel,
+  BoldModel, BoldHandles, BoldSubscription, BoldSystemHandle, ActnList,
+  BoldHandleAction, BoldActions, RBoldTranslit, BoldUMLModelLink,
+  BoldUMLRose98Link, Dialogs, DB, ADODB, BoldAbstractDatabaseAdapter,
+  BoldDatabaseAdapterADO, BoldAbstractPersistenceHandleDB,
+  BoldPersistenceHandleDB, BoldAbstractObjectUpgraderHandle,
+  BoldObjectUpgraderHandle, INIFiles, DateUtils;
+
+type
+  TBoldModelDM = class(TDataModule)
+    BSH: TBoldSystemHandle;
+    BST: TBoldSystemTypeInfoHandle;
+    BM: TBoldModel;
+    ActionList1: TActionList;
+    BoldUpdateDBAction1: TBoldUpdateDBAction;
+    BoldActivateSystemAction1: TBoldActivateSystemAction;
+    RBoldTranslit: TRBoldTranslit;
+    ADOCurrUserQuery: TADOQuery;
+    BoldPersistenceHandleFileXML1: TBoldPersistenceHandleFileXML;
+    procedure DataModuleCreate(Sender: TObject);
+    procedure BoldActivateSystemAction1SystemOpened(Sender: TObject);
+    procedure BoldActivateSystemAction1SystemClosed(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    UserName: string;
+  end;
+
+var
+  BoldModelDM: TBoldModelDM;
+  ConnectIniFile: TIniFile;
+
+implementation
+
+{$R *.dfm}
+
+uses BoldHandlesDataModule, ProgrammSettingsUnit, BusinessClasses, ReportsDataModuleUnit, MainFormUnit;
+
+procedure TBoldModelDM.BoldActivateSystemAction1SystemClosed(Sender: TObject);
+begin
+  BoldHandlesDM.ActContentBoldDataSet.Active:=False;
+  //ReportsDM.ActBoldDataSet.Active:=False;
+  //ReportsDM.ResConsBoldDataSet.Active:=False;
+  BoldActivateSystemAction1.ImageIndex:=1;
+  MainForm.AboutTabSheet.Show;
+  MainForm.MainStatusBar.Panels[0].Text:='Нет соединения';
+  MainForm.NJobAccountRep.Enabled:=False;
+  MainForm.NResOutRep.Enabled:=False;
+  MainForm.NCheckRep.Enabled:=False;
+end;
+
+procedure TBoldModelDM.BoldActivateSystemAction1SystemOpened(Sender: TObject);
+begin
+  BoldActivateSystemAction1.ImageIndex:=0;
+  MainForm.MainWorkTabSheet.Show;
+  MainForm.MainStatusBar.Panels[0].Text:='Соединение активно';
+  MainForm.SelSotrForActsBoldComboBox.OnChange(MainForm.SelSotrForActsBoldComboBox);
+  BoldHandlesDM.blhAllSotr.Expression:='Sotrudnik_remont.allInstances->select(vseFlag)';
+  if BoldHandlesDM.blhAllSotr.Count=0 then
+    begin
+      BoldHandlesDM.blhAllSotr.Expression:='Sotrudnik_remont.allInstances';
+      BoldHandlesDM.blhAllSotr.List.InsertNew(BoldHandlesDM.blhAllSotr.Count);
+      BoldHandlesDM.blhAllSotr.Last;
+      (BoldHandlesDM.blhAllSotr.CurrentElement as TSotrudnik_remont).VseFlag:=True;
+      (BoldHandlesDM.blhAllSotr.CurrentElement as TSotrudnik_remont).Familiya:='Все';
+      BoldModelDM.BoldUpdateDBAction1.Execute;
+    end;
+  BoldHandlesDM.blhAllSotr.Expression:='Sotrudnik_remont.allInstances';
+  BoldHandlesDM.blhAllResources.Expression:='Tip_tovara.allInstances->select(vseFlag)';
+  if BoldHandlesDM.blhAllSotr.Count=0 then
+    begin
+      BoldHandlesDM.blhAllResources.Expression:='Tip_tovara.allInstances';
+      BoldHandlesDM.blhAllResources.List.InsertNew(BoldHandlesDM.blhAllResources.Count);
+      BoldHandlesDM.blhAllResources.Last;
+      (BoldHandlesDM.blhAllResources.CurrentElement as TTip_tovara).VseFlag:=True;
+      (BoldHandlesDM.blhAllResources.CurrentElement as TTip_tovara).Naimenovanie:='Все';
+      BoldModelDM.BoldUpdateDBAction1.Execute;
+    end;
+  BoldHandlesDM.blhAllResources.Expression:='Tip_tovara.allInstances';
+
+  {if (ProgrammSettingsForm.blhPrSett.CurrentElement as TTekushie_znacheniya).Startovaya_data_uch<StrToDate('15.01.2006') then
+    begin
+      (ProgrammSettingsForm.blhPrSett.CurrentElement as TTekushie_znacheniya).Startovaya_data_uch:=StrToDate('15.01.2006');
+      MainForm.MainStatusBar.Panels[1].Text:='Ограниченная версия, осталось запусков - '+IntToStr(DaysBetween(StrToDate('15.10.2006'),(ProgrammSettingsForm.blhPrSett.CurrentElement as TTekushie_znacheniya).Startovaya_data_uch));
+      BoldModelDM.BoldUpdateDBAction1.Execute;
+    end
+  else
+    begin
+      (ProgrammSettingsForm.blhPrSett.CurrentElement as TTekushie_znacheniya).Startovaya_data_uch:=IncDay((ProgrammSettingsForm.blhPrSett.CurrentElement as TTekushie_znacheniya).Startovaya_data_uch);
+      MainForm.MainStatusBar.Panels[1].Text:='Ограниченная версия, осталось запусков - '+IntToStr(DaysBetween(StrToDate('15.10.2006'),(ProgrammSettingsForm.blhPrSett.CurrentElement as TTekushie_znacheniya).Startovaya_data_uch));
+      BoldModelDM.BoldUpdateDBAction1.Execute;
+      if ((ProgrammSettingsForm.blhPrSett.CurrentElement as TTekushie_znacheniya).Startovaya_data_uch>=StrToDate('15.10.2006')) then
+        begin
+          ShowMessage('Время работы ограниченной версии истекло');
+          MainForm.MainStatusBar.Panels[1].Text:='Время работы ограниченной версии истекло';
+          BoldModelDM.BoldActivateSystemAction1.Enabled:=False;
+          BSH.Active:=False;
+        end;
+    end; }
+
+  if ProgrammSettingsForm.GetEnableAdmin then
+    begin
+      try
+        ADOCurrUserQuery.SQL.Text:=IniFile.ReadString('BUSINNESS_DATA','curr_usr_sql','NO');
+        ADOCurrUserQuery.Active:=True;
+        UserName:=ADOCurrUserQuery.FindField('curr_usr_name').AsString;
+        if (UserName=IniFile.ReadString('BUSINNESS_DATA','director_login','director')) or (UserName=IniFile.ReadString('BUSINNESS_DATA','buh_login','buh'))  then
+          begin
+            ShowMessage('Вы вошли в привелегированном режиме!');
+            MainForm.NJobAccountRep.Enabled:=True;
+            MainForm.NResOutRep.Enabled:=True;
+            MainForm.NCheckRep.Enabled:=True;
+          end;
+      except
+        ShowMessage('Неудачный запрос имени текущего пользователя у сервера!');
+      end;
+    end
+  else
+    begin
+     if IniFile.ReadString('BUSINNESS_DATA','enable_for_all','NO')='YES' then
+     begin
+      MainForm.NJobAccountRep.Enabled:=True;
+      MainForm.NResOutRep.Enabled:=True;
+      MainForm.NCheckRep.Enabled:=True;
+     end; 
+    end;
+    ADOCurrUserQuery.Active:=False; 
+  //ADOConnection.
+end;
+
+procedure TBoldModelDM.DataModuleCreate(Sender: TObject);
+begin
+  ADOConnection.ConnectionString:='FILE NAME='+GetCurrentDir+'\DB_Connect.udl';
+  
+  //ADOConnection.Open();
+end;
+
+end.

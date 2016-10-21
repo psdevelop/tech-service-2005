@@ -1,0 +1,34 @@
+unit TehnPersonalUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, EnumerationDMUnit, StdCtrls, Buttons, ExtCtrls, Grids, BoldGrid,
+  BoldComboBox;
+
+type
+  TTehnPersonalForm = class(TForm)
+    BoldGrid4: TBoldGrid;
+    Panel14: TPanel;
+    BitBtn12: TBitBtn;
+    BitBtn14: TBitBtn;
+    Panel13: TPanel;
+    BoldComboBox1: TBoldComboBox;
+    Label2: TLabel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  TehnPersonalForm: TTehnPersonalForm;
+
+implementation
+
+{$R *.dfm}
+
+uses BoldHandlesDataModule, PostRepFormUnit, MainFormUnit;
+
+end.

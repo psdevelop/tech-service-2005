@@ -1,0 +1,57 @@
+unit TehnPersonalUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, EnumerationDMUnit, StdCtrls, Buttons, ExtCtrls, Grids, BoldGrid,
+  BoldComboBox;
+
+type
+  TTehnPersonalForm = class(TForm)
+    BoldGrid4: TBoldGrid;
+    Panel14: TPanel;
+    BitBtn12: TBitBtn;
+    BitBtn14: TBitBtn;
+    Panel13: TPanel;
+    BoldComboBox1: TBoldComboBox;
+    Label2: TLabel;
+    Panel1: TPanel;
+    procedure Panel1Click(Sender: TObject);
+    procedure Panel1MouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure Panel1MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  TehnPersonalForm: TTehnPersonalForm;
+
+implementation
+
+{$R *.dfm}
+
+uses BoldHandlesDataModule, PostRepFormUnit, MainFormUnit;
+
+procedure TTehnPersonalForm.Panel1MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  (Sender as TPanel).Color:=clWhite;
+end;
+
+procedure TTehnPersonalForm.Panel1MouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+  (Sender as TPanel).Color:=clHighlight;
+end;
+
+procedure TTehnPersonalForm.Panel1Click(Sender: TObject);
+begin
+  PostRepForm.ShowModal;
+end;
+
+end.

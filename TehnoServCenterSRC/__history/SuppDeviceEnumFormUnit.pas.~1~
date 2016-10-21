@@ -1,0 +1,24 @@
+unit SuppDeviceEnumFormUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs;
+
+type
+  TSuppDeviceEnumForm = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  SuppDeviceEnumForm: TSuppDeviceEnumForm;
+
+implementation
+
+{$R *.dfm}
+
+end.

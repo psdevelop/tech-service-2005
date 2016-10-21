@@ -1,0 +1,565 @@
+object BoldHandlesDM: TBoldHandlesDM
+  OldCreateOrder = False
+  Height = 867
+  Width = 638
+  object blhAllActs: TBoldListHandle
+    RootHandle = BoldModelDM.BSH
+    Expression = 'Priemka_vydacha.allInstances'
+    Left = 264
+    Top = 48
+  end
+  object BoldListHandle2: TBoldListHandle
+    Left = 16
+    Top = 96
+  end
+  object BoldListHandle3: TBoldListHandle
+    Left = 16
+    Top = 128
+  end
+  object AllActsActionList: TActionList
+    Left = 64
+    Top = 208
+    object BoldListHandleAddNewAction1: TBoldListHandleAddNewAction
+      Category = 'Bold Actions'
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhAllActs
+    end
+    object BoldListHandleDeleteAction1: TBoldListHandleDeleteAction
+      Category = 'Bold Actions'
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhAllActs
+      BoldDeleteMode = dmUnlinkAllAndDelete
+    end
+  end
+  object blhSelForSotrActs: TBoldListHandle
+    RootHandle = BoldModelDM.BSH
+    Expression = 'Priemka_vydacha.allInstances'
+    Left = 264
+    Top = 104
+  end
+  object SelForSotrActsActionList: TActionList
+    Left = 400
+    Top = 104
+    object BoldListHandleAddNewActionAllCust: TBoldListHandleAddNewAction
+      Category = 'Bold Actions'
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhSelForSotrActs
+    end
+    object BoldListHandleDeleteActionAllCust: TBoldListHandleDeleteAction
+      Category = 'Bold Actions'
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      Checked = True
+      Enabled = False
+      BoldHandle = blhSelForSotrActs
+    end
+  end
+  object blhAllSotr: TBoldListHandle
+    RootHandle = BoldModelDM.BSH
+    Expression = 'Sotrudnik_remont.allInstances'
+    Left = 512
+    Top = 216
+  end
+  object blhActContent: TBoldListHandle
+    RootHandle = blhSelForSotrActs
+    Expression = 'otdeljnaya_usluga_v'
+    Left = 264
+    Top = 160
+  end
+  object ActContentActionList: TActionList
+    Left = 400
+    Top = 160
+    object BoldListHandleAddNewActionActContent: TBoldListHandleAddNewAction
+      Category = 'Bold Actions'
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhActContent
+    end
+    object BoldListHandleDeleteActionActContent: TBoldListHandleDeleteAction
+      Category = 'Bold Actions'
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhActContent
+      BoldDeleteMode = dmDelete
+    end
+  end
+  object blhResourcesOutcome: TBoldListHandle
+    RootHandle = blhActContent
+    Expression = 'remont_predpolagaet'
+    Left = 264
+    Top = 216
+  end
+  object ResOutcomActionList: TActionList
+    Left = 400
+    Top = 216
+    object BoldListHandleAddNewAction4: TBoldListHandleAddNewAction
+      Category = 'Bold Actions'
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhResourcesOutcome
+    end
+    object BoldListHandleDeleteAction4: TBoldListHandleDeleteAction
+      Category = 'Bold Actions'
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhResourcesOutcome
+      BoldDeleteMode = dmUnlinkAllAndDelete
+    end
+  end
+  object blhAllResources: TBoldListHandle
+    RootHandle = BoldModelDM.BSH
+    Expression = 'Tip_tovara.allInstances'
+    Left = 24
+    Top = 256
+  end
+  object blhTehnicalPersonal: TBoldListHandle
+    RootHandle = BoldModelDM.BSH
+    Expression = 'Sotrudnik_remont.allInstances'
+    Left = 296
+    Top = 336
+  end
+  object blhAllIndivids: TBoldListHandle
+    RootHandle = BoldModelDM.BSH
+    Expression = 'Chastnoe_lico.allInstances'
+    Left = 368
+    Top = 312
+  end
+  object blhAllCompany: TBoldListHandle
+    RootHandle = BoldModelDM.BSH
+    Expression = 'Yuridich_lico.allInstances'
+    Left = 368
+    Top = 368
+  end
+  object AllResActionList: TActionList
+    Left = 24
+    Top = 312
+    object BoldListHandleAddNewActionAllRes: TBoldListHandleAddNewAction
+      Category = 'Bold Actions'
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhAllResources
+    end
+    object BoldListHandleDeleteActionAllRes: TBoldListHandleDeleteAction
+      Category = 'Bold Actions'
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhAllResources
+      BoldDeleteMode = dmUnlinkAllAndDelete
+    end
+  end
+  object TehnPersActionList: TActionList
+    Left = 296
+    Top = 272
+    object BoldListHandleAddNewActionTehnPers: TBoldListHandleAddNewAction
+      Category = 'Bold Actions'
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhTehnicalPersonal
+    end
+    object BoldListHandleDeleteActionTehnPers: TBoldListHandleDeleteAction
+      Category = 'Bold Actions'
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhTehnicalPersonal
+      BoldDeleteMode = dmUnlinkAllAndDelete
+    end
+  end
+  object AllIndivActionList: TActionList
+    Left = 432
+    Top = 272
+    object BoldListHandleAddNewActionAllIndivid: TBoldListHandleAddNewAction
+      Category = 'Bold Actions'
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhAllIndivids
+    end
+    object BoldListHandleDeleteActionAllIndivid: TBoldListHandleDeleteAction
+      Category = 'Bold Actions'
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhAllIndivids
+      BoldDeleteMode = dmUnlinkAllAndDelete
+    end
+  end
+  object AllCompActionList: TActionList
+    Left = 432
+    Top = 352
+    object BoldListHandleAddNewActionAllComp: TBoldListHandleAddNewAction
+      Category = 'Bold Actions'
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhAllCompany
+    end
+    object BoldListHandleDeleteActionAllCompany: TBoldListHandleDeleteAction
+      Category = 'Bold Actions'
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhAllCompany
+      BoldDeleteMode = dmUnlinkAllAndDelete
+    end
+  end
+  object blhAllOperTypes: TBoldListHandle
+    RootHandle = BoldModelDM.BSH
+    Expression = 'Tip_operacii.allInstances'
+    Left = 512
+    Top = 312
+  end
+  object AllOperTypesActionList: TActionList
+    Left = 512
+    Top = 368
+    object BoldListHandleAddNewActionAllOperType: TBoldListHandleAddNewAction
+      Category = 'Bold Actions'
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhAllOperTypes
+    end
+    object BoldListHandleDeleteActionAllOperType: TBoldListHandleDeleteAction
+      Category = 'Bold Actions'
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhAllOperTypes
+      BoldDeleteMode = dmUnlinkAllAndDelete
+    end
+  end
+  object blhAllRemTovTypes: TBoldListHandle
+    RootHandle = BoldModelDM.BSH
+    Expression = 'Tip_remontiruemogo_izdeliya.allInstances'
+    Left = 120
+    Top = 448
+  end
+  object AllRemTovActionList: TActionList
+    Left = 120
+    Top = 496
+    object BoldListHandleAddNewActionAllRemTovTypes: TBoldListHandleAddNewAction
+      Category = 'Bold Actions'
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhAllRemTovTypes
+    end
+    object BoldListHandleDeleteActionAllRemTovTypes: TBoldListHandleDeleteAction
+      Category = 'Bold Actions'
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhAllRemTovTypes
+      BoldDeleteMode = dmUnlinkAllAndDelete
+    end
+  end
+  object ActContentBoldDataSet: TBoldDataSet
+    FieldDescriptions = <
+      item
+        BoldProperties.Expression = 'opisanie_neispravnosti'
+      end
+      item
+        BoldProperties.Expression = 'izdelie'
+      end
+      item
+        BoldProperties.Expression = 'seriinyi_nomer'
+      end
+      item
+        BoldProperties.Expression = 'komplektnostj'
+      end
+      item
+        BoldProperties.Expression = 'vydan'
+      end
+      item
+        BoldProperties.Expression = 'vydanChisl'
+      end
+      item
+        BoldProperties.Expression = 'nomer_akta_priyoma'
+      end
+      item
+        BoldProperties.Expression = 'nomer_akta_vydachi'
+      end
+      item
+        BoldProperties.Expression = 'vid_rabot'
+      end
+      item
+        BoldProperties.Expression = 'summa_rashodov_mater'
+      end
+      item
+        BoldProperties.Expression = 'stoim_rabot'
+      end
+      item
+        BoldProperties.Expression = 'raznica_raboty'
+      end
+      item
+        BoldProperties.Expression = 'dataVydachi'
+      end
+      item
+        BoldProperties.Expression = 'orientirStoim'
+      end
+      item
+        BoldProperties.Expression = 'menedgerImya'
+      end
+      item
+        BoldProperties.Expression = 'naimenOperac'
+      end
+      item
+        BoldProperties.Expression = 'imyaTehnSpecialista'
+      end>
+    AutoOpen = False
+    Left = 168
+    Top = 144
+  end
+  object ActContentDataSource: TDataSource
+    DataSet = ActContentBoldDataSet
+    Left = 72
+    Top = 160
+  end
+  object blhResUsing: TBoldListHandle
+    RootHandle = blhAllResources
+    Expression = 'imeet_rashod_materiala'
+    Left = 24
+    Top = 360
+  end
+  object ResUsingActionList: TActionList
+    Left = 24
+    Top = 408
+    object BoldListHandleAddNewActionResUsing: TBoldListHandleAddNewAction
+      Category = 'Bold Actions'
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      BoldHandle = blhResUsing
+    end
+    object BoldListHandleDeleteActionResUsing: TBoldListHandleDeleteAction
+      Category = 'Bold Actions'
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      BoldHandle = blhResUsing
+      BoldDeleteMode = dmUnlinkAllAndDelete
+    end
+  end
+  object blhActForIndivid: TBoldListHandle
+    Left = 368
+    Top = 424
+  end
+  object blhActsForCompany: TBoldListHandle
+    Left = 368
+    Top = 472
+  end
+  object ActForIndividActionList: TActionList
+    Left = 480
+    Top = 424
+    object BoldListHandleAddNewActionActForIndivid: TBoldListHandleAddNewAction
+      Category = 'Bold Actions'
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      BoldHandle = blhActForIndivid
+    end
+    object BoldListHandleDeleteActionActForIndivid: TBoldListHandleDeleteAction
+      Category = 'Bold Actions'
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      BoldHandle = blhActForIndivid
+      BoldDeleteMode = dmUnlinkAllAndDelete
+    end
+  end
+  object ActForCompActionList: TActionList
+    Left = 480
+    Top = 472
+    object BoldListHandleAddNewActionActForComp: TBoldListHandleAddNewAction
+      Category = 'Bold Actions'
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhActsForCompany
+    end
+    object BoldListHandleDeleteActionActForComp: TBoldListHandleDeleteAction
+      Category = 'Bold Actions'
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      BoldHandle = blhActsForCompany
+      BoldDeleteMode = dmUnlinkAllAndDelete
+    end
+  end
+  object blhAllSotrPlace: TBoldListHandle
+    RootHandle = BoldModelDM.BSH
+    Expression = 'Dolgnostj.allInstances'
+    Left = 200
+    Top = 408
+  end
+  object PersPlaceActionList: TActionList
+    Left = 280
+    Top = 408
+    object BoldListHandleAddNewActionSotrPlace: TBoldListHandleAddNewAction
+      Category = 'Bold Actions'
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhAllSotrPlace
+    end
+    object BoldListHandleDeleteActionSotrPlace: TBoldListHandleDeleteAction
+      Category = 'Bold Actions'
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhAllSotrPlace
+      BoldDeleteMode = dmUnlinkAllAndDelete
+    end
+  end
+  object blhRemForTovar: TBoldListHandle
+    RootHandle = blhAllRemTovTypes
+    Expression = 'opredelyaet_tip_dlya'
+    Left = 120
+    Top = 552
+  end
+  object RemForTovarActionList: TActionList
+    Left = 120
+    Top = 608
+  end
+  object blhConsForRes: TBoldListHandle
+    RootHandle = blhNotAllRes
+    Expression = 'imeet_rashod'
+    Left = 376
+    Top = 536
+  end
+  object ConsForResActionList: TActionList
+    Left = 376
+    Top = 592
+    object BoldListHandleAddNewActionConsForRes: TBoldListHandleAddNewAction
+      Category = 'Bold Actions'
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      BoldHandle = blhConsForRes
+    end
+    object BoldListHandleDeleteActionConsForRes: TBoldListHandleDeleteAction
+      Category = 'Bold Actions'
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      BoldHandle = blhConsForRes
+      BoldDeleteMode = dmUnlinkAllAndDelete
+    end
+  end
+  object blhNotAllSotr: TBoldListHandle
+    RootHandle = BoldModelDM.BSH
+    Expression = 'Sotrudnik_remont.allInstances->select(not vseFlag)'
+    Left = 256
+    Top = 592
+  end
+  object blhAllOper: TBoldListHandle
+    RootHandle = BoldModelDM.BSH
+    Expression = 'Operaciya.allInstances'
+    Left = 120
+    Top = 664
+  end
+  object ActionListAllOper: TActionList
+    Left = 120
+    Top = 720
+    object BoldListHandleAddNewActionAllOper: TBoldListHandleAddNewAction
+      Category = 'Bold Actions'
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhAllOper
+    end
+    object BoldListHandleDeleteActionAllOper: TBoldListHandleDeleteAction
+      Category = 'Bold Actions'
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhAllOper
+      BoldDeleteMode = dmUnlinkAllAndDelete
+    end
+  end
+  object blhAllSaler: TBoldListHandle
+    RootHandle = BoldModelDM.BSH
+    Expression = 'Plateljshik.allInstances'
+    Left = 256
+    Top = 664
+  end
+  object AllSalerActionList: TActionList
+    Left = 256
+    Top = 720
+    object BoldListHandleAddNewActionAllSaler: TBoldListHandleAddNewAction
+      Category = 'Bold Actions'
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      BoldHandle = blhAllSaler
+    end
+    object BoldListHandleDeleteActionAllSaler: TBoldListHandleDeleteAction
+      Category = 'Bold Actions'
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      BoldHandle = blhAllSaler
+    end
+  end
+  object blhOpResOutPosition: TBoldListHandle
+    RootHandle = blhResourcesOutcome
+    Expression = 'vklyuch_pozicii_rashoda'
+    Left = 176
+    Top = 240
+  end
+  object OpResOutPosActionList: TActionList
+    Left = 168
+    Top = 304
+    object BoldListHandleAddNewActionOpResPos: TBoldListHandleAddNewAction
+      Category = 'Bold Actions'
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhOpResOutPosition
+    end
+    object BoldListHandleDeleteActionOpResPos: TBoldListHandleDeleteAction
+      Category = 'Bold Actions'
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhOpResOutPosition
+    end
+  end
+  object blhAllSotrNotAll: TBoldListHandle
+    RootHandle = BoldModelDM.BSH
+    Expression = 'Sotrudnik_remont.allInstances->select(not vseFlag)'
+    Left = 512
+    Top = 528
+  end
+  object NotAllSotrActionList: TActionList
+    Left = 512
+    Top = 584
+    object BoldListHandleAddNewActionSotrNotAll: TBoldListHandleAddNewAction
+      Category = 'Bold Actions'
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhAllSotrNotAll
+    end
+    object BoldListHandleDeleteActionSotrNotAll: TBoldListHandleDeleteAction
+      Category = 'Bold Actions'
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhAllSotrNotAll
+    end
+  end
+  object blhNotAllRes: TBoldListHandle
+    RootHandle = BoldModelDM.BSH
+    Expression = 'Tip_tovara.allInstances->select(not vseFlag)'
+    Left = 408
+    Top = 648
+  end
+  object NotAllResActionList: TActionList
+    Left = 408
+    Top = 704
+    object BoldListHandleAddNewActionNotAllRes: TBoldListHandleAddNewAction
+      Category = 'Bold Actions'
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      BoldHandle = blhNotAllRes
+    end
+    object BoldListHandleDeleteActionNotAllRes: TBoldListHandleDeleteAction
+      Category = 'Bold Actions'
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      BoldHandle = blhNotAllRes
+    end
+  end
+  object AllSotrActionList: TActionList
+    Left = 568
+    Top = 280
+    object BoldListHandleAddNewActionAllSotr: TBoldListHandleAddNewAction
+      Category = 'Bold Actions'
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      Enabled = False
+      BoldHandle = blhAllSotr
+    end
+    object BoldListHandleDeleteActionAllSotr: TBoldListHandleDeleteAction
+      Category = 'Bold Actions'
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      BoldHandle = blhAllSotr
+    end
+  end
+  object blhOperForAllInd: TBoldListHandle
+    RootHandle = blhAllIndivids
+    Expression = 'fiz_klient_dlya_uslugi.otdeljnaya_usluga_v.remont_predpolagaet'
+    Left = 376
+    Top = 800
+  end
+  object blhOperForAllComp: TBoldListHandle
+    RootHandle = blhAllCompany
+    Expression = 'yur_klient_uslugi.otdeljnaya_usluga_v.remont_predpolagaet'
+    Left = 480
+    Top = 792
+  end
+end

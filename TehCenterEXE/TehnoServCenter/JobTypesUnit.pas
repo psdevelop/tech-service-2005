@@ -1,0 +1,31 @@
+unit JobTypesUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, EnumerationDMUnit, StdCtrls, Buttons, ExtCtrls, Grids, BoldGrid;
+
+type
+  TJobTypesForm = class(TForm)
+    BoldGrid8: TBoldGrid;
+    Panel23: TPanel;
+    BitBtn24: TBitBtn;
+    BitBtn26: TBitBtn;
+    Panel22: TPanel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  JobTypesForm: TJobTypesForm;
+
+implementation
+
+{$R *.dfm}
+
+uses BoldHandlesDataModule;
+
+end.

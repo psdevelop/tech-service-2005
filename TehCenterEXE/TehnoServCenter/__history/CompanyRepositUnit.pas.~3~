@@ -1,0 +1,26 @@
+unit CompanyRepositUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs;
+
+type
+  TCompanyRepositForm = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  CompanyRepositForm: TCompanyRepositForm;
+
+implementation
+
+{$R *.dfm}
+
+uses BoldHandlesDataModule;
+
+end.

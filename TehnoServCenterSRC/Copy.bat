@@ -1,0 +1,14 @@
+copy TehCenter.exe TehCenterProduct\TehCenter.exe
+copy TehCenter.ini TehCenterProduct\TehCenter.ini
+copy midas.dll TehCenterProduct\midas.dll
+copy DB_DATA.xml TehCenterProduct\DB_DATA.xml
+copy Check.cds TehCenterProduct\Check.cds
+copy midas.jdbg TehCenterProduct\midas.jdbg
+copy Reports\ReportsPr.rav TehCenterProduct\Reports\ReportsPr.rav
+copy TehCenter.bdsproj.local TehCenterProduct\TehCenter.bdsproj.local
+copy TehCenter.cfg TehCenterProduct\TehCenter.cfg
+copy ResAccount.cds TehCenterProduct\ResAccount.cds
+copy ResOutcome.cds TehCenterProduct\ResOutcome.cds
+copy SuppList.cds TehCenterProduct\SuppList.cds
+copy ActContent.cds TehCenterProduct\ActContent.cds
+copy DB_Connect.udl TehCenterProduct\DB_Connect.udl

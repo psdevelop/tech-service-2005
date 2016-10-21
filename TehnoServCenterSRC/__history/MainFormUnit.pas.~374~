@@ -1,0 +1,937 @@
+unit MainFormUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus, ComCtrls, ExtCtrls, ToolWin, Grids, BoldGrid,
+  BoldModelDataModule, BoldHandlesDataModule, BoldControllersUnit, StdCtrls,
+  Buttons, BoldMemo, BoldComboBox, BoldCheckBox, BusinessClasses, BoldEdit,
+  BoldLabel, DBCGrids, Mask, DBCtrls, PostRepFormUnit, SuppDeviceEnumFormUnit,
+  JobTypesUnit, TehnPersonalUnit, OtherPersonalUnit, ResourcesEnumUnit,
+  IndividClientRepositFormUnit, CompanyRepositUnit, DateUtils, NewCustFormUnit,
+  ImagesCompUnit, OperEnumUnit, ProgrammSettingsUnit, JobAccountSetFormUnit,
+  ResRepSetUnit, DB, DBGrids, ShellAPI;
+
+type
+  TMainForm = class(TForm)
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    N3: TMenuItem;
+    N4: TMenuItem;
+    N5: TMenuItem;
+    N6: TMenuItem;
+    N7: TMenuItem;
+    ToolBar1: TToolBar;
+    ToolButton1: TToolButton;
+    ToolButton2: TToolButton;
+    ToolButton4: TToolButton;
+    Opensystem1: TMenuItem;
+    UpdateDB1: TMenuItem;
+    N8: TMenuItem;
+    NJobAccountRep: TMenuItem;
+    N10: TMenuItem;
+    N11: TMenuItem;
+    NResOutRep: TMenuItem;
+    NCheckRep: TMenuItem;
+    N15: TMenuItem;
+    N16: TMenuItem;
+    N17: TMenuItem;
+    N18: TMenuItem;
+    N19: TMenuItem;
+    N20: TMenuItem;
+    N21: TMenuItem;
+    N22: TMenuItem;
+    N23: TMenuItem;
+    N27: TMenuItem;
+    N28: TMenuItem;
+    N29: TMenuItem;
+    N30: TMenuItem;
+    N31: TMenuItem;
+    N32: TMenuItem;
+    N33: TMenuItem;
+    N24: TMenuItem;
+    N12: TMenuItem;
+    N25: TMenuItem;
+    Panel1: TPanel;
+    PageControl1: TPageControl;
+    MainWorkTabSheet: TTabSheet;
+    AboutTabSheet: TTabSheet;
+    Panel2: TPanel;
+    PageControl2: TPageControl;
+    IncomeOutcomeHeadTabSheet: TTabSheet;
+    PageControl7: TPageControl;
+    TabSheet3: TTabSheet;
+    Panel6: TPanel;
+    FilterCustDelBitBtn: TBitBtn;
+    BitBtn11: TBitBtn;
+    ForSotrSelActsBoldGrid: TBoldGrid;
+    Panel7: TPanel;
+    PageControl3: TPageControl;
+    CustSaleTabSheet: TTabSheet;
+    Label4: TLabel;
+    IsUncacheBoldCheckBox: TBoldCheckBox;
+    SaleUnCacheBoldCheckBox: TBoldCheckBox;
+    Panel5: TPanel;
+    BoldComboBox8: TBoldComboBox;
+    CustManagTabSheet: TTabSheet;
+    Label7: TLabel;
+    BoldComboBox3: TBoldComboBox;
+    Panel13: TPanel;
+    TabSheet4: TTabSheet;
+    Panel37: TPanel;
+    SelSotrForActsBoldComboBox: TBoldComboBox;
+    BoldGrid10: TBoldGrid;
+    Panel38: TPanel;
+    ReturnActSpeedButton: TSpeedButton;
+    BitBtn7: TBitBtn;
+    ActDelBitBtn: TBitBtn;
+    MaterialUsHeadTabSheet: TTabSheet;
+    BoldGrid3: TBoldGrid;
+    Panel12: TPanel;
+    Panel15: TPanel;
+    ClHeadTabSheet: TTabSheet;
+    PageControl8: TPageControl;
+    IndividClHeadTabSheet: TTabSheet;
+    BoldGrid6: TBoldGrid;
+    Panel17: TPanel;
+    Panel18: TPanel;
+    CompClHeadTabSheet: TTabSheet;
+    BoldGrid7: TBoldGrid;
+    Panel19: TPanel;
+    Panel20: TPanel;
+    DetailSuppHeadTabSheet: TTabSheet;
+    BoldGrid9: TBoldGrid;
+    Panel25: TPanel;
+    Panel11: TPanel;
+    LeftMainPanel: TPanel;
+    PageControl4: TPageControl;
+    IncomeOutcomeDetailTabSheet: TTabSheet;
+    PageControl5: TPageControl;
+    ActContentTabSheet: TTabSheet;
+    Panel4: TPanel;
+    Panel27: TPanel;
+    ActContentDBCtrlGrid: TDBCtrlGrid;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBMemo1: TDBMemo;
+    DBMemo2: TDBMemo;
+    Panel21: TPanel;
+    BoldLabel1: TBoldLabel;
+    Panel9: TPanel;
+    BitBtn1: TBitBtn;
+    BitBtn3: TBitBtn;
+    ReturnActBtn: TBitBtn;
+    ActEditBitBtn: TBitBtn;
+    TabSheet14: TTabSheet;
+    Panel24: TPanel;
+    BoldCheckBox1: TBoldCheckBox;
+    PageControl9: TPageControl;
+    IndividInfoTabSheet: TTabSheet;
+    Panel16: TPanel;
+    BoldComboBox5: TBoldComboBox;
+    Panel26: TPanel;
+    GroupBox1: TGroupBox;
+    BoldLabel2: TBoldLabel;
+    BoldLabel3: TBoldLabel;
+    BoldLabel4: TBoldLabel;
+    BoldLabel5: TBoldLabel;
+    BoldLabel6: TBoldLabel;
+    BoldLabel7: TBoldLabel;
+    BoldLabel8: TBoldLabel;
+    CompanyInfoTabSheet: TTabSheet;
+    Panel23: TPanel;
+    BoldComboBox6: TBoldComboBox;
+    Panel28: TPanel;
+    GroupBox2: TGroupBox;
+    BoldLabel9: TBoldLabel;
+    BoldLabel10: TBoldLabel;
+    BoldLabel11: TBoldLabel;
+    BoldLabel12: TBoldLabel;
+    BoldLabel13: TBoldLabel;
+    BoldLabel14: TBoldLabel;
+    BoldLabel15: TBoldLabel;
+    BoldLabel16: TBoldLabel;
+    BoldLabel17: TBoldLabel;
+    BoldLabel18: TBoldLabel;
+    BoldLabel19: TBoldLabel;
+    CurrActInfoTabSheet: TTabSheet;
+    PageControl6: TPageControl;
+    CurrActDetailTabSheet: TTabSheet;
+    Label3: TLabel;
+    Label6: TLabel;
+    Label5: TLabel;
+    Label12: TLabel;
+    Label1: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    BoldMemo2: TBoldMemo;
+    BoldMemo4: TBoldMemo;
+    BoldEdit1: TBoldEdit;
+    BoldComboBox4: TBoldComboBox;
+    Panel8: TPanel;
+    BoldComboBox2: TBoldComboBox;
+    Panel14: TPanel;
+    Panel40: TPanel;
+    BoldComboBox12: TBoldComboBox;
+    BoldEdit2: TBoldEdit;
+    TabSheet13: TTabSheet;
+    Panel29: TPanel;
+    Label2: TLabel;
+    Panel10: TPanel;
+    BoldComboBox1: TBoldComboBox;
+    Panel41: TPanel;
+    Splitter2: TSplitter;
+    GroupBox3: TGroupBox;
+    Panel42: TPanel;
+    Label13: TLabel;
+    Panel30: TPanel;
+    BoldComboBox7: TBoldComboBox;
+    Panel44: TPanel;
+    BoldGrid11: TBoldGrid;
+    Panel45: TPanel;
+    BitBtn2: TBitBtn;
+    BitBtn4: TBitBtn;
+    Panel43: TPanel;
+    BoldGrid2: TBoldGrid;
+    Panel22: TPanel;
+    BitBtn5: TBitBtn;
+    BitBtn8: TBitBtn;
+    MatUsingDetailTabSheet: TTabSheet;
+    Panel31: TPanel;
+    Label16: TLabel;
+    Panel32: TPanel;
+    BoldGrid4: TBoldGrid;
+    ClDetailTabSheet: TTabSheet;
+    PageControl10: TPageControl;
+    IndividClDetailTabSheet: TTabSheet;
+    BoldGrid5: TBoldGrid;
+    Panel34: TPanel;
+    Panel33: TPanel;
+    Label18: TLabel;
+    CompanyDetailTabSheet: TTabSheet;
+    Panel35: TPanel;
+    Panel39: TPanel;
+    Label19: TLabel;
+    DevSuppDetailTabSheet: TTabSheet;
+    Panel36: TPanel;
+    Label17: TLabel;
+    Panel46: TPanel;
+    BoldGrid8: TBoldGrid;
+    Splitter1: TSplitter;
+    Panel47: TPanel;
+    MainStatusBar: TStatusBar;
+    BackRetAllActSpeedButton: TSpeedButton;
+    BackCustContActSpeedButton: TSpeedButton;
+    BoldGrid1: TBoldGrid;
+    ViewOnlyUnOutComeCheckBox: TCheckBox;
+    ViewLasdDateCheckBox: TCheckBox;
+    LastDateTimePickerActs: TDateTimePicker;
+    TabSheet1: TTabSheet;
+    LastCustDateTimePicker: TDateTimePicker;
+    CheckBox1: TCheckBox;
+    ActCustBitBtn: TBitBtn;
+    CheckBox2: TCheckBox;
+    CheckBox3: TCheckBox;
+    BoldLabel20: TBoldLabel;
+    BoldLabel21: TBoldLabel;
+    BoldLabel22: TBoldLabel;
+    ResDelPopupMenu: TPopupMenu;
+    DeleteUnlinkResPositon1: TMenuItem;
+    procedure DeleteUnlinkResPositon1Click(Sender: TObject);
+    procedure BoldGrid4MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure CheckBox2Click(Sender: TObject);
+    procedure ActCustBitBtnClick(Sender: TObject);
+    procedure FilterCustDelBitBtnClick(Sender: TObject);
+    procedure LastCustDateTimePickerChange(Sender: TObject);
+    procedure ForSotrSelActsBoldGridClick(Sender: TObject);
+    procedure CheckBox1Click(Sender: TObject);
+    procedure ActDelBitBtnClick(Sender: TObject);
+    procedure LastDateTimePickerActsChange(Sender: TObject);
+    procedure ViewLasdDateCheckBoxClick(Sender: TObject);
+    procedure ViewOnlyUnOutComeCheckBoxClick(Sender: TObject);
+    procedure BoldGrid10Click(Sender: TObject);
+    procedure BackRetAllActSpeedButtonClick(Sender: TObject);
+    procedure N5Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormCreate(Sender: TObject);
+    procedure NResOutRepClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure ActEditBitBtnClick(Sender: TObject);
+    procedure ActContentTabSheetHide(Sender: TObject);
+    procedure ActContentTabSheetShow(Sender: TObject);
+    procedure NCheckRepClick(Sender: TObject);
+    procedure ClHeadTabSheetShow(Sender: TObject);
+    procedure CompClHeadTabSheetShow(Sender: TObject);
+    procedure IndividClHeadTabSheetShow(Sender: TObject);
+    procedure DetailSuppHeadTabSheetShow(Sender: TObject);
+    procedure MaterialUsHeadTabSheetShow(Sender: TObject);
+    procedure NJobAccountRepClick(Sender: TObject);
+    procedure N11Click(Sender: TObject);
+    procedure ToolButton3Click(Sender: TObject);
+    procedure N25Click(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
+    procedure ToolButton4Click(Sender: TObject);
+    procedure N12Click(Sender: TObject);
+    procedure Panel4Click(Sender: TObject);
+    procedure ReturnActBtnClick(Sender: TObject);
+    procedure BitBtn7Click(Sender: TObject);
+    procedure BitBtn11Click(Sender: TObject);
+    procedure BitBtn4Click(Sender: TObject);
+    procedure TabSheet4Show(Sender: TObject);
+    procedure TabSheet1Show(Sender: TObject);
+    procedure SelSotrForActsBoldComboBoxChange(Sender: TObject);
+    procedure Panel30Click(Sender: TObject);
+    procedure IncomeOutcomeHeadTabSheetShow(Sender: TObject);
+    procedure N27Click(Sender: TObject);
+    procedure N24Click(Sender: TObject);
+    procedure N28Click(Sender: TObject);
+    procedure N20Click(Sender: TObject);
+    procedure N21Click(Sender: TObject);
+    procedure Panel28Click(Sender: TObject);
+    procedure Panel26Click(Sender: TObject);
+    procedure Panel15Click(Sender: TObject);
+    procedure Panel8Click(Sender: TObject);
+    procedure N23Click(Sender: TObject);
+    procedure Panel13Click(Sender: TObject);
+    procedure Panel22Click(Sender: TObject);
+    procedure N22Click(Sender: TObject);
+    procedure Panel8MouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure Panel8MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure N10Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
+    procedure N7Click(Sender: TObject);
+    procedure ActivateRepBDS;
+    procedure FilterAllActs;
+    procedure FilterCustList;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  MainForm: TMainForm;
+  CheckSumm: Double;
+  Mouse: TMouse;
+
+implementation
+
+{$R *.dfm}
+
+uses ReportsDataModuleUnit;
+
+procedure TMainForm.N7Click(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TMainForm.BitBtn2Click(Sender: TObject);
+begin
+  CurrActDetailTabSheet.Show;
+end;
+
+procedure TMainForm.FilterAllActs;
+var BaseExpr: string;
+begin
+ if BoldHandlesDM.blhAllSotr.Count>0 then
+ begin
+  if (BoldHandlesDM.blhAllSotr.CurrentElement as TSotrudnik_remont).VseFlag then
+    begin
+      BaseExpr:='Sostav_priemki_vydachi.allInstances';
+    end
+  else
+    begin
+      BaseExpr:='tehnik_zanimaetsya';
+    end;
+  if ViewOnlyUnOutComeCheckBox.Checked then
+    begin
+      BaseExpr:=BaseExpr+'->select(not vydan)';
+    end;
+  if ViewLasdDateCheckBox.Checked then
+    begin
+      BaseExpr:=BaseExpr+'->select(pozicii_uslug_dlya.dataPriema>=#'+FormatDateTime('YYYY-MM-DD',LastDateTimePickerActs.Date)+')';
+    end;
+   BoldHandlesDM.blhActContent.Expression:=BaseExpr;
+ end;
+  if BoldHandlesDM.blhActContent.Count>0 then
+    BoldHandlesDM.blhSelForSotrActs.CurrentIndex:=BoldHandlesDM.blhSelForSotrActs.List.IndexOf((BoldHandlesDM.blhActContent.CurrentElement as TSostav_priemki_vydachi).Pozicii_uslug_dlya);
+end;
+
+procedure TMainForm.ActivateRepBDS;
+var SPV: TSostav_priemki_vydachi;
+    i: Integer;
+begin
+ try
+
+  CheckSumm:=0;
+
+  ReportsDM.ActBoldCDS.Active:=False;
+  ReportsDM.ActBoldCDS.CreateDataSet;
+  ReportsDM.ActBoldCDS.SaveToFile('ActContent.cds');
+  ReportsDM.ResOutcomeCDS.Active:=False;
+  ReportsDM.ResOutcomeCDS.CreateDataSet;
+  ReportsDM.ResOutcomeCDS.SaveToFile('ResOutcome.cds');
+ if BoldHandlesDM.blhActContent.Count>0 then
+ begin
+  SPV:=(BoldHandlesDM.blhActContent.CurrentElement as TSostav_priemki_vydachi);
+  ReportsDM.ActBoldCDS.AppendRecord([SPV.Nomer_akta_priyoma,SPV.Nomer_akta_vydachi,SPV.DataVydachi,SPV.Pozicii_uslug_dlya.DataPriema,SPV.Pozicii_uslug_dlya.ImyaKlienta,SPV.Pozicii_uslug_dlya.TelefonKlienta,SPV.MenedgerImya,SPV.NaimenOperac,SPV.Izdelie,SPV.Seriinyi_nomer,SPV.Komplektnostj,SPV.Opisanie_neispravnosti,SPV.ImyaTehnSpecialista,SPV.Stoim_rabot,SPV.OrientirStoim]);
+  ReportsDM.ActBoldCDS.SaveToFile('ActContent.cds');
+ end;
+  if BoldHandlesDM.blhResourcesOutcome.Count>0 then
+    begin
+      BoldHandlesDM.blhResourcesOutcome.First;
+
+      while True do
+        begin
+         ReportsDM.ResOutcomeCDS.AppendRecord([(BoldHandlesDM.blhResourcesOutcome.CurrentElement as TRashod_rem_materialov).Stroka_opisaniya,(BoldHandlesDM.blhResourcesOutcome.CurrentElement as TRashod_rem_materialov).Stoimostj_vsei_raboty_]);
+         if BoldHandlesDM.blhResourcesOutcome.CurrentIndex<(BoldHandlesDM.blhResourcesOutcome.Count-1)
+           then
+            BoldHandlesDM.blhResourcesOutcome.Next
+         else
+           Break;
+        end;
+     ReportsDM.ResOutcomeCDS.SaveToFile('ResOutcome.cds');
+    end;
+     ReportsDM.SuppListCDS.Active:=False;
+     ReportsDM.SuppListCDS.CreateDataSet;
+     ReportsDM.SuppListCDS.SaveToFile('SuppList.cds');
+    if ReportsDM.blhSupportList.Count >0 then
+    begin
+     ReportsDM.blhSupportList.First;
+      i:=1;
+      while True do
+        begin
+         ReportsDM.SuppListCDS.AppendRecord([i,(ReportsDM.blhSupportList.CurrentElement as TSostav_priemki_vydachi).Pozicii_uslug_dlya.ImyaKlienta,(ReportsDM.blhSupportList.CurrentElement as TSostav_priemki_vydachi).Stoim_operacii,(ReportsDM.blhSupportList.CurrentElement as TSostav_priemki_vydachi).Summa_rashodov_mater,(ReportsDM.blhSupportList.CurrentElement as TSostav_priemki_vydachi).Stoim_rabot,(ReportsDM.blhSupportList.CurrentElement as TSostav_priemki_vydachi).Stoim_operacii*0.3,(ReportsDM.blhSupportList.CurrentElement as TSostav_priemki_vydachi).Izdelie]);
+         if ReportsDM.blhSupportList.CurrentIndex<(ReportsDM.blhSupportList.Count-1)
+           then
+            ReportsDM.blhSupportList.Next
+         else
+           Break;
+         i:=i+1;
+        end;
+     ReportsDM.SuppListCDS.SaveToFile('SuppList.cds');
+     end;
+
+     ReportsDM.AllCustOperCDS.Active:=False;
+     ReportsDM.AllCustOperCDS.CreateDataSet;
+     ReportsDM.AllCustOperCDS.SaveToFile('Check.cds');
+    if ReportsDM.blhAllCustOper.Count >0 then
+    begin
+     ReportsDM.blhAllCustOper.First;
+      i:=1;
+      while True do
+        begin
+         ReportsDM.AllCustOperCDS.AppendRecord([i,(ReportsDM.blhAllCustOper.CurrentElement as TRashod_rem_materialov).Operaciya,(ReportsDM.blhAllCustOper.CurrentElement as TRashod_rem_materialov).Stoimostj_vsei_raboty_,(ReportsDM.blhAllCustOper.CurrentElement as TRashod_rem_materialov).Stoimostj_vsei_raboty_,(ReportsDM.blhAllCustOper.CurrentElement as TRashod_rem_materialov).Stoimostj_vsei_raboty_]);
+         CheckSumm:=CheckSumm+(ReportsDM.blhAllCustOper.CurrentElement as TRashod_rem_materialov).Stoimostj_vsei_raboty_;
+         if ReportsDM.blhAllCustOper.CurrentIndex<(ReportsDM.blhAllCustOper.Count-1)
+           then
+            ReportsDM.blhAllCustOper.Next
+         else
+           Break;
+         i:=i+1;
+        end;
+     ReportsDM.AllCustOperCDS.SaveToFile('Check.cds');
+     end;
+
+     ReportsDM.ResOUTCDS.Active:=False;
+     ReportsDM.ResOUTCDS.CreateDataSet;
+     ReportsDM.ResOUTCDS.SaveToFile('ResAccount.cds');
+    if ReportsDM.blhResRepList.Count >0 then
+    begin
+     ReportsDM.blhResRepList.First;
+      i:=1;
+      while True do
+        begin
+         ReportsDM.ResOUTCDS.AppendRecord([i,(ReportsDM.blhResRepList.CurrentElement as TRashod_po_operacii).Tip_tovara,(ReportsDM.blhResRepList.CurrentElement as TRashod_po_operacii).vhodit_kak_poz_rashoda.Rashoduetsya_dlya_remonta.DataVydachi,(ReportsDM.blhResRepList.CurrentElement as TRashod_po_operacii).vhodit_kak_poz_rashoda.Operaciya,(ReportsDM.blhResRepList.CurrentElement as TRashod_po_operacii).Kolichestvo,(ReportsDM.blhResRepList.CurrentElement as TRashod_po_operacii).Stoimostj,(ReportsDM.blhResRepList.CurrentElement as TRashod_po_operacii).Summa,(ReportsDM.blhResRepList.CurrentElement as TRashod_po_operacii).vhodit_kak_poz_rashoda.Rashoduetsya_dlya_remonta.ImyaTehnSpecialista]);
+         if ReportsDM.blhResRepList.CurrentIndex<(ReportsDM.blhResRepList.Count-1)
+           then
+            ReportsDM.blhResRepList.Next
+         else
+           Break;
+         i:=i+1;
+        end;
+     ReportsDM.ResOUTCDS.SaveToFile('ResAccount.cds');
+     end;
+
+ except on E: Exception do
+ begin
+  if IniFile.ReadString('BUSINNESS_DATA','show_CDS_act_err','NO')='YES' then
+   ShowMessage('Неудачная активация компонентов поставки данных! Ошибка: '+E.Message);
+ end;
+ end;
+end;
+
+procedure TMainForm.N10Click(Sender: TObject);
+begin
+
+if BoldHandlesDM.blhActContent.Count>0 then
+begin
+ ActivateRepBDS;
+ if ReportsDM.RepPrintDialog.Execute then
+  ReportsDM.RvProject.ExecuteReport('ServiceIncomeReport');
+end
+else
+ ShowMessage('Нет текущего акта работ!');
+
+end;
+
+procedure TMainForm.Panel8MouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+  (Sender as TPanel).Color:=clWhite;
+end;
+
+procedure TMainForm.Panel8MouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+  (Sender as TPanel).Color:=clMenuBar;
+end;
+
+procedure TMainForm.N22Click(Sender: TObject);
+begin
+  JobTypesForm.ShowModal;
+end;
+
+procedure TMainForm.Panel22Click(Sender: TObject);
+begin
+
+ //     BoldHandlesDM.BoldListHandleAddNewActionAllOperType.Execute;
+      JobTypesForm.ShowModal;
+ //   end
+ // else
+ //   ShowMessage('Невозможно осуществить операцию!');
+end;
+
+procedure TMainForm.Panel13Click(Sender: TObject);
+begin
+  TehnPersonalForm.ShowModal;
+end;
+
+procedure TMainForm.N23Click(Sender: TObject);
+begin
+  ResourcesEnumUnit.ResourcesEnumForm.ShowModal;
+end;
+
+procedure TMainForm.Panel8Click(Sender: TObject);
+begin
+  SuppDeviceEnumForm.ShowModal;
+end;
+
+procedure TMainForm.Panel15Click(Sender: TObject);
+begin
+  ResourcesEnumForm.ShowModal;
+end;
+
+procedure TMainForm.Panel26Click(Sender: TObject);
+begin
+  IndividClientReposForm.ShowModal;
+end;
+
+procedure TMainForm.Panel28Click(Sender: TObject);
+begin
+  CompanyRepositForm.ShowModal;
+end;
+
+procedure TMainForm.N21Click(Sender: TObject);
+begin
+  CompanyRepositForm.ShowModal;
+end;
+
+procedure TMainForm.N20Click(Sender: TObject);
+begin
+  IndividClientReposForm.ShowModal;
+end;
+
+procedure TMainForm.N28Click(Sender: TObject);
+begin
+  SuppDeviceEnumForm.ShowModal;
+end;
+
+procedure TMainForm.N24Click(Sender: TObject);
+begin
+  TehnPersonalForm.ShowModal;
+end;
+
+procedure TMainForm.N27Click(Sender: TObject);
+begin
+  PostRepForm.ShowModal;
+end;
+
+procedure TMainForm.IncomeOutcomeHeadTabSheetShow(Sender: TObject);
+begin
+  IncomeOutcomeDetailTabSheet.Show;
+end;
+
+procedure TMainForm.Panel30Click(Sender: TObject);
+begin
+  ResourcesEnumForm.ShowModal;
+end;
+
+procedure TMainForm.SelSotrForActsBoldComboBoxChange(Sender: TObject);
+begin
+ if BoldHandlesDM.blhAllSotr.Count>0 then
+  if (BoldHandlesDM.blhAllSotr.CurrentElement as TSotrudnik_remont).VseFlag then
+    begin
+      BoldHandlesDM.blhActContent.Expression:='';
+      //BoldHandlesDM.blhActContent.Expression:='Sostav_priemki_vydachi.allInstances';
+      BoldHandlesDM.blhActContent.RootHandle:=BoldModelDM.BSH;
+      BoldHandlesDM.blhActContent.Expression:='Sostav_priemki_vydachi.allInstances';
+    end
+  else
+    begin
+      BoldHandlesDM.blhActContent.Expression:='';
+      //BoldHandlesDM.blhActContent.Expression:='tehnik_zanimaetsya';
+      BoldHandlesDM.blhActContent.RootHandle:=BoldHandlesDM.blhAllSotr;
+      BoldHandlesDM.blhActContent.Expression:='tehnik_zanimaetsya';
+    end;
+  FilterAllActs;
+end;
+
+procedure TMainForm.TabSheet1Show(Sender: TObject);
+begin
+      ActContentTabSheet.TabVisible:=True;
+      BoldHandlesDM.blhActContent.Expression:='';
+      BoldHandlesDM.blhActContent.RootHandle:=BoldHandlesDM.blhSelForSotrActs;
+      BoldHandlesDM.blhActContent.Expression:='otdeljnaya_usluga_v';
+      ActContentTabSheet.Show;
+      FilterCustList;
+end;
+
+procedure TMainForm.TabSheet4Show(Sender: TObject);
+begin
+    LeftMainPanel.Visible:=True;
+  if BoldModelDM.BSH.Active then
+    begin
+      ActContentTabSheet.TabVisible:=False;
+      BoldHandlesDM.blhActContent.Expression:='';
+      BoldHandlesDM.blhActContent.RootHandle:=BoldHandlesDM.blhAllSotr;
+      BoldHandlesDM.blhActContent.Expression:='tehnik_zanimaetsya';
+      SelSotrForActsBoldComboBox.OnChange(SelSotrForActsBoldComboBox);
+    end;
+      //SelSotrForActsBoldComboBox.
+      CurrActInfoTabSheet.Show;
+   if BoldHandlesDM.blhActContent.Count>0 then
+     BoldHandlesDM.blhSelForSotrActs.CurrentIndex:=BoldHandlesDM.blhSelForSotrActs.List.IndexOf((BoldHandlesDM.blhActContent.CurrentElement as TSostav_priemki_vydachi).Pozicii_uslug_dlya);
+end;
+
+procedure TMainForm.BitBtn4Click(Sender: TObject);
+begin
+     (BoldHandlesDM.blhSelForSotrActs.CurrentElement as TPriemka_vydacha).DataPriema:=Today;
+end;
+
+procedure TMainForm.BitBtn11Click(Sender: TObject);
+begin
+  BoldHandlesDM.BoldListHandleAddNewActionAllCust.Execute;
+  BoldHandlesDM.blhSelForSotrActs.Last;
+  (BoldHandlesDM.blhSelForSotrActs.CurrentElement as TPriemka_vydacha).DataPriema:=Today;
+  (BoldHandlesDM.blhSelForSotrActs.CurrentElement as TPriemka_vydacha).Nomer_schyota:=IntToStr(ProgrammSettingsForm.GetCheckNumber);
+  ProgrammSettingsForm.SetCheckNumber(ProgrammSettingsForm.GetCheckNumber+1);
+  FilterCustList;
+end;
+
+procedure TMainForm.BitBtn7Click(Sender: TObject);
+begin
+if BoldHandlesDM.blhAllSotr.Count>0 then
+begin
+ if (BoldHandlesDM.blhAllSotr.CurrentElement as TSotrudnik_remont).VseFlag then
+ begin
+   ShowMessage('Выберите технического сотрудника!');
+ end
+ else if BoldHandlesDM.blhAllSotr.Count=0 then
+ begin
+   ShowMessage('Добавьте хотя бы одного сотрудника технического сотрудника!');
+ end
+ else
+ begin
+  BoldHandlesDM.BoldListHandleAddNewActionAllCust.Execute;
+  BoldHandlesDM.blhSelForSotrActs.Last;
+  (BoldHandlesDM.blhSelForSotrActs.CurrentElement as TPriemka_vydacha).DataPriema:=Today;
+  BoldHandlesDM.BoldListHandleAddNewActionAllActsForAdd.Execute;
+  BoldHandlesDM.blhAllActsForAdd.Last;
+  (BoldHandlesDM.blhSelForSotrActs.CurrentElement as TPriemka_vydacha).Nomer_schyota:=IntToStr(ProgrammSettingsForm.GetCheckNumber);
+  ProgrammSettingsForm.SetCheckNumber(ProgrammSettingsForm.GetCheckNumber+1);
+  (BoldHandlesDM.blhAllActsForAdd.CurrentElement as TSostav_priemki_vydachi).Pozicii_uslug_dlya:=(BoldHandlesDM.blhSelForSotrActs.CurrentElement as TPriemka_vydacha);
+  (BoldHandlesDM.blhAllActsForAdd.CurrentElement as TSostav_priemki_vydachi).remontom_zanimaetsya:=(BoldHandlesDM.blhAllSotr.CurrentElement as TSotrudnik_remont);
+  (BoldHandlesDM.blhAllActsForAdd.CurrentElement as TSostav_priemki_vydachi).Nomer_akta_priyoma:=ProgrammSettingsForm.GetIncomeNumber;
+  (BoldHandlesDM.blhAllActsForAdd.CurrentElement as TSostav_priemki_vydachi).Nomer_akta_vydachi:=ProgrammSettingsForm.GetIncomeNumber;
+  (BoldHandlesDM.blhAllActsForAdd.CurrentElement as TSostav_priemki_vydachi).Pozicii_uslug_dlya.zaimaetsya_uslugoi:=(BoldHandlesDM.blhAllSotr.CurrentElement as TSotrudnik_remont);
+  ProgrammSettingsForm.SetIncomeNumber(ProgrammSettingsForm.GetIncomeNumber+1);
+  NewCustForm.ShowModal;
+ end;
+ end
+else
+  ShowMessage('Добавьте в справочник хотя бы одного сотрудника!');
+ if BoldHandlesDM.blhActContent.Count>0 then
+  BoldHandlesDM.blhSelForSotrActs.CurrentIndex:=BoldHandlesDM.blhSelForSotrActs.List.IndexOf((BoldHandlesDM.blhActContent.CurrentElement as TSostav_priemki_vydachi).Pozicii_uslug_dlya);
+end;
+
+procedure TMainForm.ReturnActBtnClick(Sender: TObject);
+begin
+  (BoldHandlesDM.blhActContent.CurrentElement as TSostav_priemki_vydachi).Vydan:=True;
+  (BoldHandlesDM.blhActContent.CurrentElement as TSostav_priemki_vydachi).DataVydachi:=Today;
+  //(BoldHandlesDM.blhActContent.CurrentElement as TSostav_priemki_vydachi).Nomer_akta_vydachi:=ProgrammSettingsForm.GetOutcomeNumber;
+  //ProgrammSettingsForm.SetOutcomeNumber(ProgrammSettingsForm.GetOutcomeNumber+1);
+end;
+
+procedure TMainForm.Panel4Click(Sender: TObject);
+begin
+  OperEnumForm.ShowModal;
+end;
+
+procedure TMainForm.N12Click(Sender: TObject);
+begin
+  OperEnumForm.ShowModal;
+end;
+
+procedure TMainForm.ToolButton4Click(Sender: TObject);
+begin
+   Close;
+end;
+
+procedure TMainForm.BitBtn1Click(Sender: TObject);
+begin
+  BoldHandlesDM.BoldListHandleAddNewActionActContent.Execute;
+  BoldHandlesDM.blhActContent.Last;
+  (BoldHandlesDM.blhActContent.CurrentElement as TSostav_priemki_vydachi).Nomer_akta_priyoma:=ProgrammSettingsForm.GetIncomeNumber;
+  (BoldHandlesDM.blhActContent.CurrentElement as TSostav_priemki_vydachi).Nomer_akta_vydachi:=ProgrammSettingsForm.GetIncomeNumber;
+  ProgrammSettingsForm.SetIncomeNumber(ProgrammSettingsForm.GetIncomeNumber+1);
+end;
+
+procedure TMainForm.N25Click(Sender: TObject);
+begin
+  ProgrammSettingsForm.ShowModal;
+end;
+
+procedure TMainForm.ToolButton3Click(Sender: TObject);
+begin
+  //ReportsDM.
+end;
+
+procedure TMainForm.N11Click(Sender: TObject);
+begin
+  if BoldHandlesDM.blhActContent.Count>0 then
+begin
+ ActivateRepBDS;
+ if ReportsDM.RepPrintDialog.Execute then
+  ReportsDM.RvProject.ExecuteReport('ServiseOutcomeReport');
+end
+else
+ ShowMessage('Нет текущего акта работ!');
+end;
+
+procedure TMainForm.NJobAccountRepClick(Sender: TObject);
+begin
+  JobAccountSetForm.ShowModal;
+end;
+
+procedure TMainForm.MaterialUsHeadTabSheetShow(Sender: TObject);
+begin
+  MatUsingDetailTabSheet.Show;
+end;
+
+procedure TMainForm.DetailSuppHeadTabSheetShow(Sender: TObject);
+begin
+  DevSuppDetailTabSheet.Show;
+end;
+
+procedure TMainForm.IndividClHeadTabSheetShow(Sender: TObject);
+begin
+  IndividClDetailTabSheet.Show;
+end;
+
+procedure TMainForm.CompClHeadTabSheetShow(Sender: TObject);
+begin
+  CompanyDetailTabSheet.Show;
+end;
+
+procedure TMainForm.ClHeadTabSheetShow(Sender: TObject);
+begin
+  ClDetailTabSheet.Show;
+end;
+
+procedure TMainForm.NCheckRepClick(Sender: TObject);
+begin
+  if BoldHandlesDM.blhSelForSotrActs.Count>0 then
+begin
+ ActivateRepBDS;
+ ReportsDM.RvProject.SetParam('customer',(BoldHandlesDM.blhSelForSotrActs.CurrentElement as TPriemka_vydacha).ImyaKlienta);
+ ReportsDM.RvProject.SetParam('saler',(BoldHandlesDM.blhSelForSotrActs.CurrentElement as TPriemka_vydacha).Plateljshik);
+ //(BoldHandlesDM.blhSelForSotrActs.CurrentElement as TPriemka_vydacha).Plateljshik);
+ ReportsDM.RvProject.SetParam('check_num',(BoldHandlesDM.blhSelForSotrActs.CurrentElement as TPriemka_vydacha).Nomer_schyota);
+ ReportsDM.RvProject.SetParam('check_date',DateToStr(Today));
+ ReportsDM.RvProject.SetParam('nds',FloatToStr(CheckSumm/118*18));
+ if ReportsDM.RepPrintDialog.Execute then
+  ReportsDM.RvProject.ExecuteReport('CheckReport');
+end
+else
+ ShowMessage('Нет текущего заказа!');
+end;
+
+procedure TMainForm.ActContentTabSheetShow(Sender: TObject);
+begin
+  BoldHandlesDM.ActContentBoldDataSet.Active:=True;
+end;
+
+procedure TMainForm.ActContentTabSheetHide(Sender: TObject);
+begin
+  BoldHandlesDM.ActContentBoldDataSet.Active:=False;
+end;
+
+procedure TMainForm.ActEditBitBtnClick(Sender: TObject);
+begin
+  CurrActDetailTabSheet.Show;
+end;
+
+procedure TMainForm.FormShow(Sender: TObject);
+begin
+  BoldHandlesDM.ActContentBoldDataSet.BoldHandle:=BoldHandlesDM.blhActContent;
+
+end;
+
+procedure TMainForm.NResOutRepClick(Sender: TObject);
+begin
+  ResRepSetForm.ShowModal;
+end;
+
+procedure TMainForm.FormCreate(Sender: TObject);
+begin
+  AboutTabSheet.Show;
+  LastDateTimePickerActs.Date:=IncDay(Today,-2);
+  LastCustDateTimePicker.Date:=IncDay(Today,-2);
+  Mouse:=TMouse.Create;
+end;
+
+procedure TMainForm.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  if BoldModelDM.BSH.Active then
+    BoldModelDM.BoldActivateSystemAction1.Execute;
+end;
+
+procedure TMainForm.N5Click(Sender: TObject);
+var PCH: PChar;
+    hw: HWND;
+begin
+  ShellExecute(hw,'open',StrPCopy(PCH,GetCurrentDir+'\DB_Connect.udl'), nil, nil, sw_ShowNormal);
+end;
+
+procedure TMainForm.BackRetAllActSpeedButtonClick(Sender: TObject);
+begin
+  (BoldHandlesDM.blhActContent.CurrentElement as TSostav_priemki_vydachi).Vydan:=False;
+  (BoldHandlesDM.blhActContent.CurrentElement as TSostav_priemki_vydachi).DataVydachi:=StrToDate('30.12.1899');
+end;
+
+procedure TMainForm.BoldGrid10Click(Sender: TObject);
+begin
+ if BoldHandlesDM.blhActContent.Count>0 then
+  BoldHandlesDM.blhSelForSotrActs.CurrentIndex:=BoldHandlesDM.blhSelForSotrActs.List.IndexOf((BoldHandlesDM.blhActContent.CurrentElement as TSostav_priemki_vydachi).Pozicii_uslug_dlya);
+end;
+
+procedure TMainForm.ViewOnlyUnOutComeCheckBoxClick(Sender: TObject);
+begin
+  FilterAllActs;
+end;
+
+procedure TMainForm.ViewLasdDateCheckBoxClick(Sender: TObject);
+begin
+  LastDateTimePickerActs.Enabled:=ViewLasdDateCheckBox.Checked;
+  FilterAllActs;
+end;
+
+procedure TMainForm.LastDateTimePickerActsChange(Sender: TObject);
+begin
+  FilterAllActs;
+end;
+
+procedure TMainForm.ActDelBitBtnClick(Sender: TObject);
+begin
+if MessageDlg('Удалить акт?',mtConfirmation,mbYesNo,0)=mrYes then
+  BoldHandlesDM.blhActContent.CurrentBoldObject.Delete;
+end;
+
+procedure TMainForm.CheckBox1Click(Sender: TObject);
+begin
+   LastCustDateTimePicker.Enabled:=CheckBox1.Checked;
+  FilterCustList;
+end;
+
+procedure TMainForm.FilterCustList;
+begin
+  BoldHandlesDM.blhFilterCustList.Expression:='Priemka_vydacha.allInstances';
+  if CheckBox1.Checked then
+    begin
+      BoldHandlesDM.blhFilterCustList.Expression:=BoldHandlesDM.blhFilterCustList.Expression+'->select(dataPriema>=#'+FormatDateTime('YYYY-MM-DD',LastCustDateTimePicker.Date)+')';
+    end;
+  if CheckBox2.Checked then
+    begin
+      BoldHandlesDM.blhFilterCustList.Expression:=BoldHandlesDM.blhFilterCustList.Expression+'->select(yavlBezNal)';
+      if CheckBox3.Checked then
+        begin
+          BoldHandlesDM.blhFilterCustList.Expression:=BoldHandlesDM.blhFilterCustList.Expression+'->select(oplachenBezNal)';
+        end;
+    end;
+  if BoldHandlesDM.blhFilterCustList.Count>0 then
+  begin
+    BoldHandlesDM.blhSelForSotrActs.CurrentIndex:=BoldHandlesDM.blhSelForSotrActs.List.IndexOf((BoldHandlesDM.blhFilterCustList.CurrentElement as TPriemka_vydacha));
+    LeftMainPanel.Visible:=True;
+    CustSaleTabSheet.Visible:=True;
+    CustManagTabSheet.Visible:=True;
+  end
+  else
+   begin
+    LeftMainPanel.Visible:=False;
+    CustSaleTabSheet.Visible:=False;
+    CustManagTabSheet.Visible:=False;
+   end;
+end;
+
+procedure TMainForm.ForSotrSelActsBoldGridClick(Sender: TObject);
+begin
+  FilterCustList;
+end;
+
+procedure TMainForm.LastCustDateTimePickerChange(Sender: TObject);
+begin
+  FilterCustList;
+end;
+
+procedure TMainForm.FilterCustDelBitBtnClick(Sender: TObject);
+begin
+ if MessageDlg('Удалить заказ?',mtConfirmation,mbYesNo,0)=mrYes then
+      BoldHandlesDM.blhFilterCustList.CurrentBoldObject.Delete;
+end;
+
+procedure TMainForm.ActCustBitBtnClick(Sender: TObject);
+begin
+  NewCustForm.ShowModal;
+end;
+
+procedure TMainForm.CheckBox2Click(Sender: TObject);
+begin
+  CheckBox3.Enabled:=CheckBox2.Checked;
+end;
+
+procedure TMainForm.BoldGrid4MouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+ if IniFile.ReadString('BUSINNESS_DATA','del_unlink_res','NO')='YES' then
+  if Button in [mbRight] then
+    begin
+      ResDelPopupMenu.Popup(Mouse.CursorPos.X,Mouse.CursorPos.Y);
+    end;
+end;
+
+procedure TMainForm.DeleteUnlinkResPositon1Click(Sender: TObject);
+begin
+  BoldHandlesDM.blhFilterCustList.CurrentBoldObject.Delete;
+end;
+
+end.

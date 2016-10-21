@@ -1,0 +1,24 @@
+unit TehnPersonalUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, EnumerationDMUnit;
+
+type
+  TTehnPersonalForm = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  TehnPersonalForm: TTehnPersonalForm;
+
+implementation
+
+{$R *.dfm}
+
+end.

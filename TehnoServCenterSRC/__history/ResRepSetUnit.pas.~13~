@@ -1,0 +1,80 @@
+unit ResRepSetUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ComCtrls, StdCtrls, BoldComboBox, Buttons;
+
+type
+  TResRepSetForm = class(TForm)
+    Label1: TLabel;
+    BitBtn1: TBitBtn;
+    AccoutJobSelWorkerBoldComboBox: TBoldComboBox;
+    GroupBox1: TGroupBox;
+    Label3: TLabel;
+    Label4: TLabel;
+    DateTimePicker1: TDateTimePicker;
+    DateTimePicker2: TDateTimePicker;
+    procedure BitBtn1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure AccoutJobSelWorkerBoldComboBoxChange(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  ResRepSetForm: TResRepSetForm;
+
+implementation
+
+{$R *.dfm}
+
+uses BoldHandlesDataModule, BoldModelDataModule, ReportsDataModuleUnit, MainFormUnit, BusinessClasses;
+
+procedure TResRepSetForm.AccoutJobSelWorkerBoldComboBoxChange(Sender: TObject);
+begin
+  if (BoldHandlesDM.blhAllResources.CurrentElement as TTip_tovara).VseFlag then
+    begin
+      ReportsDM.blhResRepList.Expression:='';
+      //BoldHandlesDM.blhActContent.Expression:='Sostav_priemki_vydachi.allInstances';
+      ReportsDM.blhResRepList.RootHandle:=BoldModelDM.BSH;
+      ReportsDM.blhResRepList.Expression:='Tip_tovara.allInstances';
+    end
+  else
+    begin
+      ReportsDM.blhResRepList.Expression:='';
+      //BoldHandlesDM.blhActContent.Expression:='tehnik_zanimaetsya';
+      ReportsDM.blhResRepList.RootHandle:=BoldHandlesDM.blhAllResources;
+      ReportsDM.blhResRepList.Expression:='imeet_rashod';
+    end;
+end;
+
+procedure TResRepSetForm.FormShow(Sender: TObject);
+begin
+  AccoutJobSelWorkerBoldComboBox.OnChange(AccoutJobSelWorkerBoldComboBox);
+end;
+
+procedure TResRepSetForm.BitBtn1Click(Sender: TObject);
+begin
+  ReportsDM.blhResRepList.Expression:=ReportsDM.blhSupportList.Expression+'->select(self.vhodit_kak_poz_rashoda.rashoduetsya_dlya_remonta.dataVydachi>=#'+FormatDateTime('YYYY-MM-DD',DateTimePicker1.Date)+')->select(self.vhodit_kak_poz_rashoda.rashoduetsya_dlya_remonta.dataVydachi<=#'+FormatDateTime('YYYY-MM-DD',DateTimePicker2.Date)+')';
+  Close;
+if ReportsDM.blhResRepList.Count>0 then
+begin
+ MainForm.ActivateRepBDS;
+ if ReportsDM.RepPrintDialog.Execute then
+ begin
+  ReportsDM.RvProject.SetParam('start_date',DateToStr(DateTimePicker1.Date));
+  ReportsDM.RvProject.SetParam('end_date',DateToStr(DateTimePicker1.Date));
+  ReportsDM.RvProject.SetParam('res_name',(BoldHandlesDM.blhAllResources.CurrentElement as TTip_tovara).Naimenovanie);
+  ReportsDM.RvProject.ExecuteReport('JobAccountReport');
+ end;
+end
+else
+ ShowMessage('Отсутствуют выполняемые работы по заданным параметрам!');
+
+end;
+
+end.

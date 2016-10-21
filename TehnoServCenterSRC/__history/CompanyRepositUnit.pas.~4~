@@ -1,0 +1,30 @@
+unit CompanyRepositUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Grids, BoldGrid, StdCtrls, Buttons, ExtCtrls;
+
+type
+  TCompanyRepositForm = class(TForm)
+    Panel19: TPanel;
+    BitBtn21: TBitBtn;
+    BitBtn23: TBitBtn;
+    BoldGrid7: TBoldGrid;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  CompanyRepositForm: TCompanyRepositForm;
+
+implementation
+
+{$R *.dfm}
+
+uses BoldHandlesDataModule;
+
+end.

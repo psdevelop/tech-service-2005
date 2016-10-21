@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2006.01.04 15:39:36.343.pas,C:\Documents and Settings\Qwest\Мои документы\Borland Studio Projects\Unit1.pas=C:\MyBDS2005Proj\TehnoServCenter\MainFormUnit.pas</Transaction>
+    <Transaction>2006.01.04 15:39:36.343.dfm,C:\Documents and Settings\Qwest\Мои документы\Borland Studio Projects\Unit1.dfm=C:\MyBDS2005Proj\TehnoServCenter\MainFormUnit.dfm</Transaction>
+    <Transaction>2006.01.04 16:03:55.203.pas,C:\MyBDS2005Proj\TehnoServCenter\Unit1.pas=C:\MyBDS2005Proj\TehnoServCenter\BoldModelDataModule.pas</Transaction>
+    <Transaction>2006.01.04 16:03:55.203.dfm,C:\MyBDS2005Proj\TehnoServCenter\Unit1.dfm=C:\MyBDS2005Proj\TehnoServCenter\BoldModelDataModule.dfm</Transaction>
+    <Transaction>2006.01.04 16:10:23.468.pas,C:\MyBDS2005Proj\TehnoServCenter\Unit1.pas=C:\MyBDS2005Proj\TehnoServCenter\BoldModelMainDataModule.pas</Transaction>
+    <Transaction>2006.01.04 16:10:23.468.dfm,C:\MyBDS2005Proj\TehnoServCenter\Unit1.dfm=C:\MyBDS2005Proj\TehnoServCenter\BoldModelMainDataModule.dfm</Transaction>
+    <Transaction>2006.01.04 16:10:46.093.pas,C:\MyBDS2005Proj\TehnoServCenter\BoldModelMainDataModule.pas=C:\MyBDS2005Proj\TehnoServCenter\BoldHandlesDataModule.pas</Transaction>
+    <Transaction>2006.01.04 16:10:46.093.dfm,C:\MyBDS2005Proj\TehnoServCenter\BoldModelMainDataModule.dfm=C:\MyBDS2005Proj\TehnoServCenter\BoldHandlesDataModule.dfm</Transaction>
+    <Transaction>2006.01.04 16:11:41.328.pas,C:\MyBDS2005Proj\TehnoServCenter\Unit2.pas=C:\MyBDS2005Proj\TehnoServCenter\BoldControllersUnit.pas</Transaction>
+    <Transaction>2006.01.04 16:11:41.328.dfm,C:\MyBDS2005Proj\TehnoServCenter\Unit2.dfm=C:\MyBDS2005Proj\TehnoServCenter\BoldControllersUnit.dfm</Transaction>
+    <Transaction>2006.01.04 20:46:16.061.pas,C:\MyBDSProjects\TehnoServCenter\BusinessClasses_PersistenceInterfaces.pas=</Transaction>
+    <Transaction>2006.01.06 11:47:14.625.pas,C:\MyBDS2005Proj\06122006\TehnoServCenter\Unit1.pas=C:\MyBDS2005Proj\06122006\TehnoServCenter\ReportsDataModuleUnit.pas</Transaction>
+    <Transaction>2006.01.06 11:47:14.625.dfm,C:\MyBDS2005Proj\06122006\TehnoServCenter\Unit1.dfm=C:\MyBDS2005Proj\06122006\TehnoServCenter\ReportsDataModuleUnit.dfm</Transaction>
+    <Transaction>2006.01.06 20:06:45.967.pas,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.pas=C:\MyBDSProjects\07012006\TehnoServCenter\ClientRepositFormUnit.pas</Transaction>
+    <Transaction>2006.01.06 20:06:45.983.dfm,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.dfm=C:\MyBDSProjects\07012006\TehnoServCenter\ClientRepositFormUnit.dfm</Transaction>
+    <Transaction>2006.01.06 20:07:30.842.pas,C:\MyBDSProjects\07012006\TehnoServCenter\ClientRepositFormUnit.pas=C:\MyBDSProjects\07012006\TehnoServCenter\IndividClientRepositFormUnit.pas</Transaction>
+    <Transaction>2006.01.06 20:07:30.842.dfm,C:\MyBDSProjects\07012006\TehnoServCenter\ClientRepositFormUnit.dfm=C:\MyBDSProjects\07012006\TehnoServCenter\IndividClientRepositFormUnit.dfm</Transaction>
+    <Transaction>2006.01.06 20:09:18.186.pas,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.pas=C:\MyBDSProjects\07012006\TehnoServCenter\CompanyRepositUnit.pas</Transaction>
+    <Transaction>2006.01.06 20:09:18.186.dfm,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.dfm=C:\MyBDSProjects\07012006\TehnoServCenter\CompanyRepositUnit.dfm</Transaction>
+    <Transaction>2006.01.06 20:13:23.576.pas,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.pas=C:\MyBDSProjects\07012006\TehnoServCenter\PostRepFormUnit.pas</Transaction>
+    <Transaction>2006.01.06 20:13:23.576.dfm,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.dfm=C:\MyBDSProjects\07012006\TehnoServCenter\PostRepFormUnit.dfm</Transaction>
+    <Transaction>2006.01.06 20:18:55.780.pas,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.pas=C:\MyBDSProjects\07012006\TehnoServCenter\EnumerationDMUnit.pas</Transaction>
+    <Transaction>2006.01.06 20:18:55.780.dfm,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.dfm=C:\MyBDSProjects\07012006\TehnoServCenter\EnumerationDMUnit.dfm</Transaction>
+    <Transaction>2006.01.06 20:21:23.467.pas,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.pas=C:\MyBDSProjects\07012006\TehnoServCenter\ResourcesEnumUnit.pas</Transaction>
+    <Transaction>2006.01.06 20:21:23.467.dfm,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.dfm=C:\MyBDSProjects\07012006\TehnoServCenter\ResourcesEnumUnit.dfm</Transaction>
+    <Transaction>2006.01.06 20:24:30.623.pas,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.pas=C:\MyBDSProjects\07012006\TehnoServCenter\SuppDeviceEnumFormUnit.pas</Transaction>
+    <Transaction>2006.01.06 20:24:30.623.dfm,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.dfm=C:\MyBDSProjects\07012006\TehnoServCenter\SuppDeviceEnumFormUnit.dfm</Transaction>
+    <Transaction>2006.01.06 20:28:37.748.pas,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.pas=C:\MyBDSProjects\07012006\TehnoServCenter\JobTypesUnit.pas</Transaction>
+    <Transaction>2006.01.06 20:28:37.748.dfm,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.dfm=C:\MyBDSProjects\07012006\TehnoServCenter\JobTypesUnit.dfm</Transaction>
+    <Transaction>2006.01.06 20:31:12.467.pas,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.pas=C:\MyBDSProjects\07012006\TehnoServCenter\TehnPersonalUnit.pas</Transaction>
+    <Transaction>2006.01.06 20:31:12.467.dfm,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.dfm=C:\MyBDSProjects\07012006\TehnoServCenter\TehnPersonalUnit.dfm</Transaction>
+    <Transaction>2006.01.06 20:32:39.045.pas,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.pas=C:\MyBDSProjects\07012006\TehnoServCenter\OtherPersonalUnit.pas</Transaction>
+    <Transaction>2006.01.06 20:32:39.045.dfm,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.dfm=C:\MyBDSProjects\07012006\TehnoServCenter\OtherPersonalUnit.dfm</Transaction>
+    <Transaction>2006.01.08 17:39:39.796.pas,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.pas=C:\MyBDSProjects\07012006\TehnoServCenter\NewCustFormUnit.pas</Transaction>
+    <Transaction>2006.01.08 17:39:39.811.dfm,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.dfm=C:\MyBDSProjects\07012006\TehnoServCenter\NewCustFormUnit.dfm</Transaction>
+    <Transaction>2006.01.08 19:08:34.999.pas,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.pas=C:\MyBDSProjects\07012006\TehnoServCenter\ImagesCompUnit.pas</Transaction>
+    <Transaction>2006.01.08 19:08:34.999.dfm,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.dfm=C:\MyBDSProjects\07012006\TehnoServCenter\ImagesCompUnit.dfm</Transaction>
+    <Transaction>2006.01.08 21:20:07.468.pas,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.pas=C:\MyBDSProjects\07012006\TehnoServCenter\OperEnumUnit.pas</Transaction>
+    <Transaction>2006.01.08 21:20:07.468.dfm,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.dfm=C:\MyBDSProjects\07012006\TehnoServCenter\OperEnumUnit.dfm</Transaction>
+    <Transaction>2006.01.08 23:04:32.264.pas,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.pas=C:\MyBDSProjects\07012006\TehnoServCenter\ProgrammSettingsUnit.pas</Transaction>
+    <Transaction>2006.01.08 23:04:32.264.dfm,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.dfm=C:\MyBDSProjects\07012006\TehnoServCenter\ProgrammSettingsUnit.dfm</Transaction>
+    <Transaction>2006.01.09 18:50:02.202.pas,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.pas=C:\MyBDSProjects\07012006\TehnoServCenter\JobAccountSetFormUnit.pas</Transaction>
+    <Transaction>2006.01.09 18:50:02.217.dfm,C:\MyBDSProjects\07012006\TehnoServCenter\Unit1.dfm=C:\MyBDSProjects\07012006\TehnoServCenter\JobAccountSetFormUnit.dfm</Transaction>
+    <Transaction>2006.01.11 12:45:14.499.pas,C:\MyBDSProjects\10012006_2\TehnoServCenter\Unit1.pas=C:\MyBDSProjects\10012006_2\TehnoServCenter\ResRepSetUnit.pas</Transaction>
+    <Transaction>2006.01.11 12:45:14.499.dfm,C:\MyBDSProjects\10012006_2\TehnoServCenter\Unit1.dfm=C:\MyBDSProjects\10012006_2\TehnoServCenter\ResRepSetUnit.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

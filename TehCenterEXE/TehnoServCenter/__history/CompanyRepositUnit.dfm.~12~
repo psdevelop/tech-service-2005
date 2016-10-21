@@ -1,0 +1,287 @@
+object CompanyRepositForm: TCompanyRepositForm
+  Left = 0
+  Top = 0
+  Width = 533
+  Height = 432
+  Caption = #1057#1087#1088#1072#1074#1086#1095#1085#1080#1082' '#1082#1083#1080#1077#1085#1090#1086#1074' - '#1086#1088#1075#1072#1085#1080#1079#1072#1094#1080#1081
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -10
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 12
+  object Panel19: TPanel
+    Left = 0
+    Top = 358
+    Width = 525
+    Height = 40
+    Align = alBottom
+    TabOrder = 0
+    object BitBtn21: TBitBtn
+      Left = 12
+      Top = 12
+      Width = 57
+      Height = 19
+      Action = BoldHandlesDM.BoldListHandleAddNewActionAllComp
+      Caption = 'Add New'
+      TabOrder = 0
+    end
+    object BitBtn23: TBitBtn
+      Left = 78
+      Top = 12
+      Width = 56
+      Height = 19
+      Action = BoldHandlesDM.BoldListHandleDeleteActionAllCompany
+      Caption = 'Delete'
+      TabOrder = 1
+    end
+  end
+  object BoldGrid7: TBoldGrid
+    Left = 0
+    Top = 0
+    Width = 525
+    Height = 358
+    AddNewAtEnd = False
+    Align = alClient
+    BoldAutoColumns = False
+    BoldShowConstraints = False
+    BoldHandle = BoldHandlesDM.blhAllCompany
+    BoldProperties.NilElementMode = neNone
+    Columns = <
+      item
+        Color = clBtnFace
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+      end
+      item
+        BoldProperties.Expression = 'naimenovanie'
+        BoldProperties.ApplyPolicy = bapChange
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Title.Caption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077
+      end
+      item
+        BoldProperties.Expression = 'tip_organizacii'
+        BoldProperties.ApplyPolicy = bapChange
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Title.Caption = #1058#1080#1087' '#1086#1088#1075#1072#1085#1080#1079#1072#1094#1080#1080
+      end
+      item
+        BoldProperties.Expression = 'rukovoditelj'
+        BoldProperties.ApplyPolicy = bapChange
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Title.Caption = #1056#1091#1082#1086#1074#1086#1076#1080#1090#1077#1083#1100
+      end
+      item
+        BoldProperties.Expression = 'glBuhgalter'
+        BoldProperties.ApplyPolicy = bapChange
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Title.Caption = #1043#1083#1041#1091#1093#1075#1072#1083#1090#1077#1088
+      end
+      item
+        BoldProperties.Expression = 'ulica'
+        BoldProperties.ApplyPolicy = bapChange
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Title.Caption = #1059#1083#1080#1094#1072
+      end
+      item
+        BoldProperties.Expression = 'dom'
+        BoldProperties.ApplyPolicy = bapChange
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Title.Caption = #1044#1086#1084
+      end
+      item
+        BoldProperties.Expression = 'kvartira'
+        BoldProperties.ApplyPolicy = bapChange
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Title.Caption = #1050#1074#1072#1088#1090#1080#1088#1072
+      end
+      item
+        BoldProperties.Expression = 'korpus'
+        BoldProperties.ApplyPolicy = bapChange
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Title.Caption = #1050#1086#1088#1087#1091#1089
+      end
+      item
+        BoldProperties.Expression = 'rabochii_telefon'
+        BoldProperties.ApplyPolicy = bapChange
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Title.Caption = #1056#1072#1073#1086#1095#1080#1081' '#1090#1077#1083#1077#1092#1086#1085
+      end
+      item
+        BoldProperties.Expression = 'elektronnyi_adres'
+        BoldProperties.ApplyPolicy = bapChange
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Title.Caption = #1069#1083#1077#1082#1090#1088#1086#1085#1085#1099#1081' '#1072#1076#1088#1077#1089
+      end
+      item
+        BoldProperties.Expression = 'bIK'
+        BoldProperties.ApplyPolicy = bapChange
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Title.Caption = #1041#1048#1050
+      end
+      item
+        BoldProperties.Expression = 'iNN'
+        BoldProperties.ApplyPolicy = bapChange
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Title.Caption = #1048#1053#1053
+      end
+      item
+        BoldProperties.Expression = 'rasch__schet'
+        BoldProperties.ApplyPolicy = bapChange
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Title.Caption = #1056#1072#1089#1095'. '#1089#1095#1077#1090
+      end
+      item
+        BoldProperties.Expression = 'kPP'
+        BoldProperties.ApplyPolicy = bapChange
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Title.Caption = #1050#1055#1055
+      end
+      item
+        BoldProperties.Expression = 'kor_schet'
+        BoldProperties.ApplyPolicy = bapChange
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Title.Caption = #1050#1086#1088' '#1089#1095#1077#1090
+      end
+      item
+        BoldProperties.Expression = 'naim__banka'
+        BoldProperties.ApplyPolicy = bapChange
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Title.Caption = #1053#1072#1080#1084'. '#1073#1072#1085#1082#1072
+      end
+      item
+        BoldProperties.ApplyPolicy = bapChange
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Title.Caption = #1057#1090#1088#1072#1085#1072
+      end
+      item
+        BoldProperties.ApplyPolicy = bapChange
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Title.Caption = #1054#1073#1083#1072#1089#1090#1100
+      end
+      item
+        BoldProperties.ApplyPolicy = bapChange
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Title.Caption = #1043#1086#1088#1086#1076
+      end>
+    Ctl3d = False
+    DefaultRowHeight = 17
+    EnableColAdjust = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentCtl3D = False
+    ParentFont = False
+    TabOrder = 1
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    ColWidths = (
+      17
+      103
+      111
+      111
+      64
+      64
+      64
+      64
+      64
+      109
+      140
+      64
+      64
+      64
+      64
+      64
+      127
+      64
+      64
+      64)
+  end
+end

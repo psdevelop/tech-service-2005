@@ -1,0 +1,40 @@
+unit ReportsDataModuleUnit;
+
+interface
+
+uses
+  SysUtils, Classes, RpDefine, RpRave, BoldHandlesDataModule, RpCon, RpConDS,
+  RpRender, RpRenderCanvas, RpRenderPreview, RpRenderPrinter, Dialogs, DB,
+  BoldDataSet, BoldSubscription, BoldHandles, BoldRootedHandles,
+  BoldAbstractListHandle, BoldCursorHandle, BoldListHandle, DBClient;
+
+type
+  TReportsDM = class(TDataModule)
+    RvProject: TRvProject;
+    RvActDataSetConnection: TRvDataSetConnection;
+    RepPrintDialog: TPrintDialog;
+    RvResOutcomeDataSetConnection: TRvDataSetConnection;
+    blhSupportList: TBoldListHandle;
+    RvSuppListDataSetConnection: TRvDataSetConnection;
+    CustInfoBoldDataSet: TBoldDataSet;
+    blhAllCustOper: TBoldListHandle;
+    RvAllCustOperDataSetConnection: TRvDataSetConnection;
+    ActBoldCDS: TClientDataSet;
+    ResOutcomeCDS: TClientDataSet;
+    SuppListCDS: TClientDataSet;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  ReportsDM: TReportsDM;
+
+implementation
+
+{$R *.dfm}
+
+uses BoldModelDataModule;
+
+end.

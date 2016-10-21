@@ -1,0 +1,24 @@
+unit PostRepFormUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, EnumerationDMUnit;
+
+type
+  TPostRepForm = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  PostRepForm: TPostRepForm;
+
+implementation
+
+{$R *.dfm}
+
+end.
